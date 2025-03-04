@@ -2,488 +2,922 @@
 <html lang="en">
 
 <head>
-  <title>devfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.bundle.css">
-  <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/favicon.png" />
+    <title>DevFolio</title>
+    <!-- Icons font aswsome V 6.2.1 Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Bootstrap -->
+    <!-- CDN -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+    <!-- CDN Icons -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> -->
+    <!-- Local -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Local Icons -->
+    <link rel="stylesheet" href="css/bootstrap-icons/bootstrap-icons.min.css">
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <div class="navbar-item is-hidden-desktop">
-        <a href="https://github.com/mmacneil" class="icon is-large has-text-light">
-          <i class="fab fa-2x fa-github"></i>
-        </a>
-      </div>
-      <div class="navbar-item is-hidden-desktop">
-        <a href="https://fullstackmark.com" class="icon is-large has-text-light">
-          <i class="fas fa-2x fa-globe"></i>
-        </a>
-      </div>
-    </div>
-    <div class="navbar-menu">
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <a href="https://github.com/mmacneil" class="icon is-large has-text-light">
-            <i class="fab fa-2x fa-github"></i>
-          </a>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-smooth-scroll="true"> <!--Scrollspy-->
+    <!-- Start nav -->
+    <nav id="navbar-example" class="navbar navbar-expand-lg fixed-top"><!--Scrollspy-->
+        <div class="container">
+            <a class="navbar-brand fs-3 fw-semibold" href="#">DevFolio</a>
+            <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="bi bi-justify text-light fs-3"></span>
+            </button>
+            <div class="offcanvas offcanvas-start overflow-y-auto" data-bs-scroll="true" tabindex="-1"
+                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">about</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">work</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#blog">blog</a>
+                        </li> -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link" href="#">
+                                Dropdown
+                                <span class="bi bi-chevron-down"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Drop down1</a></li>
+                                <li class="dropdown-item deep-dropdown">
+                                    <a class="" href="#">DeepDropdown
+                                        <span class="bi bi-chevron-down"></span>
+                                    </a>
+                                    <ul class="dropdown-menu sub-menu d-none">
+                                        <li><a class="sub-menu-item" href="#">Deep Drop down1</a></li>
+                                        <li><a class="sub-menu-item" href="#">Deep Drop down2</a></li>
+                                        <li><a class="sub-menu-item" href="#">Deep Drop down3</a></li>
+                                        <li><a class="sub-menu-item" href="#">Deep Drop down4</a></li>
+                                        <li><a class="sub-menu-item" href="#">Deep Drop down5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Drop down2</a></li>
+                                <li><a class="dropdown-item" href="#">Drop down3</a></li>
+                                <li><a class="dropdown-item" href="#">Drop down4</a></li>
+                            </ul>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="large-screen d-lg-block d-none">
+                <ul class="navbar-nav gap-4 mb-2 mb-lg-0 nav nav-tabs" role="tablist">
+                    <!--Scrollspy-->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">about</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">work</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#blog">blog</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#">
+                            Dropdown
+                            <span class="bi bi-chevron-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Drop down1</a></li>
+                            <li class="dropdown-item deep-dropdown">
+                                <a class="" href="#">Deep Drop down
+                                    <span class="bi bi-chevron-right"></span>
+                                </a>
+                                <ul class="dropdown-menu sub-menu d-none">
+                                    <li><a class="sub-menu-item" href="#">Deep Drop down1</a></li>
+                                    <li><a class="sub-menu-item" href="#">Deep Drop down2</a></li>
+                                    <li><a class="sub-menu-item" href="#">Deep Drop down3</a></li>
+                                    <li><a class="sub-menu-item" href="#">Deep Drop down4</a></li>
+                                    <li><a class="sub-menu-item" href="#">Deep Drop down5</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Drop down2</a></li>
+                            <li><a class="dropdown-item" href="#">Drop down3</a></li>
+                            <li><a class="dropdown-item" href="#">Drop down4</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-item">
-          <a href="https://fullstackmark.com" class="icon is-large has-text-light">
-            <i class="fas fa-2x fa-globe"></i>
-          </a>
+    </nav>
+    <!-- End nav -->
+    <!-- Start Home -->
+    <header id="home">
+        <div class="container">
+            <div class="home-content d-flex justify-content-center align-items-center vh-100">
+                <div class="home-caption text-light text-center">
+                    <h1 class="text-light">I am Allan Rey Layese</h1>
+                    <p class="animated-letters">
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </header>
+    <!-- End Home -->
+    <main>
+        <!-- Start About -->
+        <section id="about" class="sec-pt-4 mb-5">
+            <div class="container ">
+                <div class="about-content bg-light shadow p-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row mb-4">
+                                <div class="col-5">
+                                    <div class="about-img">
+                                        <img src="images/testimonial-2.jpg" alt="testimonial-2" class="rounded">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="about-info ">
+                                        <p><span class="text-capitalize">name: </span>Allan Rey Layese</p>
+                                        <p><span class="text-capitalize">profile:
+                                                <p><span class="text-capitalize"></span>Fullstack developer</p>
+                                                <p><span class="text-capitalize"></span> Software Engineer</p>
+                                                <p><span class="text-capitalize">email: </span><a
+                                                        href="allanreylayese@gmail.com">allanreylayese@gmail.com</a>
+                                                </p>
+                                                <p><span class="text-capitalize">phone: </span><a
+                                                        href="tel:+639773264841">+639773264841</a> </p>
+                                    </div>
+                                </div>
 
-  <section class="hero is-primary">
-    <div class="hero-body">
-      <div class="container">
-        <div class="level">
-          <div class="level-item has-text-centered">
-            <figure class="image is-128x128">
-              <img class="is-rounded" src="img/me-big.jpg">
-            </figure>
-          </div>
-        </div>
-        <div class="columns has-text-centered">
-          <div class="column">
-            <h1 class="title is-1">
-              Allan Rey Layese
-            </h1>
-            <h2 class="subtitle">
-              FullStack Developer, Software Engineer
-            </h2>
-            <p>
-              <a href="docs/allan_rey_layese 2023.pdf" class="icon has-text-light">
-                <i class="fas fa-file-word"></i> <strong>Resume</strong>
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="skills">
+                                        <h5 class="fs-6 text">Skill</h5>
+                                        <span class="mb-1 d-block">HTML 90%</span>
+                                        <div class="progress mb-3" role="progressbar" aria-label="Basic example"
+                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 90%"></div>
+                                        </div>
+                                        <span class="mb-1 d-block">CSS 75%</span>
+                                        <div class="progress mb-3" role="progressbar" aria-label="Basic example"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 75%"></div>
+                                        </div>
+                                        <span class="mb-1 d-block">PHP 50%</span>
+                                        <div class="progress mb-3" role="progressbar" aria-label="Basic example"
+                                            aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 50%"></div>
+                                        </div>
+                                        <span class="mb-1 d-block">JAVASCRIPT 90%</span>
+                                        <div class="progress mb-3" role="progressbar" aria-label="Basic example"
+                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 95%"></div>
+                                        </div>
+                                        <span class="mb-1 d-block">REACT 85%</span>
+                                        <div class="progress mb-3" role="progressbar" aria-label="Basic example"
+                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 85%"></div>
+                                        </div>
+                                        <span class="mb-1 d-block">VUE 75%</span>
+                                        <div class="progress mb-3" role="progressbar" aria-label="Basic example"
+                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 75%"></div>
+                                        </div>
+                                        <span class="mb-1 d-block">ANGULAR 75%</span>
+                                        <div class="progress mb-3" role="progressbar" aria-label="Basic example"
+                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 75%"></div>
+                                        </div>
+                                        <span class="mb-1 d-block">NODE JS 80%</span>
+                                        <div class="progress mb-3" role="progressbar" aria-label="Basic example"
+                                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-me">
+                                <div class="sm-title mb-4">
+                                    <h4>About me</h4>
+                                    <div class="line"></div>
+                                </div>
+                                <p class="lead">An accomplished Software Engineer Specializing in Object-Oriented Design
+                                    and Analysis with extensive experience in the fill life cycle of software design
+                                    process including requirements definition, prototyping, proof of concepts design,
+                                    interface implementation, testing and maintenance</p>
+                                <!-- <p class="lead">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus
+                                    suscipit tortor
+                                    eget
+                                    felis porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed
+                                    sit
+                                    amet dui. porttitor at sem.</p>
+                                <p class="lead">Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut
+                                    lacinia in,
+                                    elementum
+                                    id enim. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget
+                                    tincidunt
+                                    nibh pulvinar a.</p> -->
+                                <div class="d-flex align-items-center">
+                                    <img src="images/word.jfif" height="50" width="50">
+                                    <a class="mx-2" target="_blank" style="font-weight: bold; color: skyblue;"
+                                        href="https://docs.google.com/document/d/1Vncgh0rCxFaNabyikfV4Wtq8uDIo_gZF/edit?usp=drive_link&ouid=110739181297718756075&rtpof=true&sd=true">
+                                        Resume
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End About -->
+        <!-- Start Services -->
+        <section id="services" class="sec-pt-4">
+            <div class="container">
+                <div class="services-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title mb-5">
+                                <h3 class="text-uppercase">services</h3>
+                                <p>Services That I can offer for your business</p>
+                                <div class="line m-auto" style="width: 40px; height:5px"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="icon d-flex justify-content-center align-items-center rounded-circle">
+                                    <span class="bi bi-briefcase"></span>
+                                </div>
+                                <h4 class="text-uppercase">web design</h4>
+                                <p> Create a basic visual layout and aesthetics of a website, focusing on user
+                                    experience, graphics, and overall look</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="icon d-flex justify-content-center align-items-center rounded-circle">
+                                    <span class="bi bi-globe"></span>
+                                </div>
+                                <h4 class="text-uppercase">web development</h4>
+                                <p> Build basic to advance application, programming, and maintaining websites and web
+                                    applications</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="icon d-flex justify-content-center align-items-center rounded-circle">
+                                    <span class="bi  bi-tablet"></span>
+                                </div>
+                                <h4 class="text-uppercase">Mobile Development</h4>
+                                <p> Build basic to advance application, programming, and maintaining Mobile or Tablet
+                                    applications</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="icon d-flex justify-content-center align-items-center rounded-circle">
+                                    <span class="bi bi-binoculars"></span>
+                                </div>
+                                <h4 class="text-uppercase">responsive design</h4>
+                                <p>Design approach that addresses the range of devices and device sizes, enabling
+                                    automatic adaption to the screen, whether the content is viewed on a tablet, phone,
+                                    television, or watch</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="icon d-flex justify-content-center align-items-center rounded-circle">
+                                    <span class="bi bi-binoculars"></span>
+                                </div>
+                                <h4 class="text-uppercase">Git and GitHub</h4>
+                                <p>Knowledge of Git source control system, branches and how to resolve merge conflicts.
+                                    Able to create and fork repositories on GitHub and push changes back after working
+                                    on them locally, and step through the entire Git workflow.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="icon d-flex justify-content-center align-items-center rounded-circle">
+                                    <span class="bi bi-binoculars"></span>
+                                </div>
+                                <h4 class="text-uppercase">Software Development Life Cycle</h4>
+                                <p>Create test cases to achieve control and data flow structure-based coverage, that
+                                    demonstrate system-level requirements are being met. Predict software reliability
+                                    based on operational profile testing and reliability models.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Services -->
+        <!-- Start Experience -->
+        <section id="services" class="sec-pt-4" style="background-color: #eaf9ff;">
+            <div class="container">
+                <div class="services-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title mb-5">
+                                <h3 class="text-uppercase">Work Experience</h3>
+                                <p>Past work experience</p>
+                                <div class="line m-auto" style="width: 40px; height:5px"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="d-flex justify-content-center align-items-center rounded-circle">
+                                    <img src="images/lanex_logo.jpg">
+                                </div>
+                                <h4 class="text-uppercase">Lanex Corp</h4>
+                                <h6 class="text-uppercase">Software Development Engineer</h6>
+                                <p>Works in a development team performing analysis, designing, implementing, and
+                                    managing software programs</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="d-flex justify-content-center align-items-center rounded-circle">
+                                    <img src="images/nec.png">
+                                </div>
+                                <h4 class="text-uppercase">NEC</h4>
+                                <h6 class="text-uppercase">Software Development Engineer - BP</h6>
+                                <p>Works in a development team performing analysis, designing, implementing, and
+                                    managing software programs</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="service-card bg-light rounded-4 text-center mb-5">
+                                <div class="d-flex justify-content-center align-items-center rounded-circle">
+                                    <img src="images/poshmark.png">
+                                </div>
+                                <h4 class="text-uppercase">Poshmark</h4>
+                                <h6 class="text-uppercase">React Developer</h6>
+                                <p>Create an Responsive image editor applicaiton using react js</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Services -->
+        <!-- Start Facts -->
+        <section id="facts" class="d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="facts-content">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="facts-card text-center text-light">
+                                <div
+                                    class="icon d-flex justify-content-center align-items-center rounded-circle text-light">
+                                    <span class="bi bi-check"></span>
+                                </div>
+                                <span class="fs-2">5</span>
+                                <p>WORKS COMPLETED</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="facts-card text-center text-light">
+                                <div
+                                    class="icon d-flex justify-content-center align-items-center rounded-circle text-light">
+                                    <span class="bi bi-journal-richtext"></span>
+                                </div>
+                                <span class="fs-2">6</span>
+                                <p>YEARS OF EXPERIENCE</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="facts-card text-center text-light">
+                                <div
+                                    class="icon d-flex justify-content-center align-items-center rounded-circle text-light">
+                                    <span class="bi bi-people"></span>
+                                </div>
+                                <span class="fs-2">2</span>
+                                <p>TOTAL CLIENT</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="facts-card text-center text-light">
+                                <div
+                                    class="icon d-flex justify-content-center align-items-center rounded-circle text-light">
+                                    <span class="bi bi-award"></span>
+                                </div>
+                                <span class="fs-2">1</span>
+                                <p>AWARD</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Facts -->
+        <!-- Start Portfolio -->
+        <section id="portfolio" class="sec-pt-4">
+            <div class="container">
+                <div class="portfolio-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title mb-5">
+                                <h3 class="text-uppercase">portfolio</h3>
+                                <p>A selection from some of my best work.</p>
+                                <div class="line m-auto" style="width: 40px; height:5px"></div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img" style="height: 200px;">
+                                        <img src="images/work-1.jpg" class="card-img-top" alt="work-1">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">Shinfukan</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Backend Developer</li>
+                                            </ol>
+                                            <p>PHP, Cake PHP</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="shinfukan.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img" style="height: 200px;">
+                                        <img src="images/work-2.png" class="card-img-top" alt="work-2">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">Kuroshio</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Frontend Developer</li>
+                                            </ol>
+                                            <p>React JS</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="portfolio.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img">
+                                        <img src="images/work-3.jpg" class="card-img-top" alt="work-3">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">Juwwa</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Fullstack Developer</li>
+                                            </ol>
+                                            <p>Vue JS, Node JS</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="portfolio.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img">
+                                        <img src="images/work-4.jpg" class="card-img-top" alt="work-4">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">Fiber Sensing</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Fullstack Developer</li>
+                                            </ol>
+                                            <p>Vanilla JS, JAVA</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="fiber-sensing.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img">
+                                        <img src="images/iam-basic/cover.png" class="card-img-top" alt="work-5">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">IAM Basic</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Fullstack Developer</li>
+                                            </ol>
+                                            <p>Angular JS, JAVA</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="iam-basic.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img">
+                                        <img src="images/sms/cover.png" class="card-img-top" alt="work-5">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">Shelf Monitoring Service</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Frontend Developer</li>
+                                            </ol>
+                                            <p>Angular JS, Flutter</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="shelf-monitoring-service.html"><span
+                                                    class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img">
+                                        <img src="images/cloud-camera/cover.png" class="card-img-top" alt="work-5">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">Cloud Camera</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Frontend Developer</li>
+                                            </ol>
+                                            <p>Vue JS</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="cloud-camera.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img">
+                                        <img src="images/bg-remover/cover.png" class="card-img-top" alt="work-6">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">Sellers Cave BG remover</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Frontend / Responsive Web app</li>
+                                            </ol>
+                                            <p>React JS, Vite</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="bg-remover.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
 
-  <section class="section">
-    <div class="container">
-      <h1 class="title">About Me</h1>
-      <hr />
-      <p>An accomplished Software Engineer Specializing in Object-Oriented Design and Analysis with extensive experience in the fill life cycle of software design process including requirements definition, prototyping, proof of concepts design, interface implementation, testing and maintenance</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Experience</h1>
-      <hr />
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="img/lanex.png" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4">Lanex Philippines</p>
-              <p class="subtitle is-6"><time datetime="2018-1">April 2019</time> - <time
-                  datetime="2019-9">Present</time> </p>
-            </div>
-          </div>
-          <div class="content">
-            <p>Full Stack Engineer</p>
-            <ul>
-              <li>Works in a development team performing analysis, designing, implementing, and managing software programs</li>
-              <li>Tests and evaluates new programs</li>
-              <li>Identifies areas for modification in existing programs</li>
-              <li>Successfully deployed quality and working application to client</li>
-              <li>Agile development</li>
-            </ul>
-            <div class="tags">
-              <span class="tag">Javascript</span>
-              <span class="tag">Typescript</span>
-              <span class="tag">React</span>
-              <span class="tag">Angular</span>
-              <span class="tag">Vue</span>
-              <span class="tag">Java</span>
-              <span class="tag">Flutter</span>
-              <span class="tag">Node JS</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Git</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img">
+                                        <img src="images/fundela/cover.png" class="card-img-top" alt="work-5">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">Fundela</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Frontend / Responsive Web app</li>
+                                            </ol>
+                                            <p>Next / React</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="fundela.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
 
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Projects</h1>
-      <hr />
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Shinpukan</p>
-                <figure class="image is-3by2">
-                  <img class="modal-trigger" data-target="project-1-modal" src="img/project-1-cover.png">
-                </figure>
-              </article>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="portfolio-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="portfolio-img">
+                                        <img src="images/healthclx/cover.png" class="card-img-top" alt="work-5">
+                                    </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="portfolio-body">
+                                            <h5 class="card-title">HealthClx</h5>
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item">Frontend / Responsive Web app</li>
+                                            </ol>
+                                            <p>Next / React / Apollo / GraphQL</p>
+                                        </div>
+                                        <div class="icon">
+                                            <a href="healthclx.html"><span class="bi bi-plus-circle"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Kuroshio</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-2-modal" src="img/kuroshio-1-cover.png">
-                </figure>
-              </article>
+        </section>
+        <!-- End Portfolio -->
+        <!-- Start Testimonials -->
+        <!-- <section id="testimonials">
+            <div class="container">
+                <div class="testimonials-content text-light text-center">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-12">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
+                                data-bs-touch="false">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                                        data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="3000">
+                                        <div class="testimonials-card mb-5 pb-1">
+                                            <div class="testimonials-img mb-3 m-auto">
+                                                <img src="images/testimonial-2.jpg" class="d-block rounded-circle"
+                                                    alt="testimonials-1">
+                                            </div>
+                                            <div class="testimonials-caption">
+                                                <h5 class="text-uppercase text-light">xavi alonso</h5>
+                                                <p class="lead">Curabitur arcu erat, accumsan id imperdiet et,
+                                                    porttitor
+                                                    at
+                                                    sem. Lorem ipsum dolor sit amet,
+                                                    consectetur adipiscing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="3000">
+                                        <div class="testimonials-card mb-5 pb-1">
+                                            <div class="testimonials-img mb-3 m-auto">
+                                                <img src="images/testimonial-4.jpg" class="d-block rounded-circle"
+                                                    alt="testimonials-2">
+                                            </div>
+                                            <div class="testimonials-caption">
+                                                <h5 class="text-uppercase text-light">Marta Socrate</h5>
+                                                <p class="lead">Curabitur arcu erat, accumsan id imperdiet et,
+                                                    porttitor
+                                                    at
+                                                    sem. Lorem ipsum dolor sit amet,
+                                                    consectetur adipiscing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Juwwa</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-3-modal" src="img/juwwa-cover-1.png">
-                </figure>
-              </article>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Fiber Sensing</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-4-modal" src="img/fs-cover-1.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">IAM Basic</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-5-modal" src="img/basic-cover-1.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">SMS</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-6-modal" src="img/sms-cover-1.png">
-                </figure>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </section> -->
+        <!-- End Testimonials -->
+        <!-- Start Blog -->
+        <!-- <section id="blog" class="sec-pt-4">
+            <div class="container">
+                <div class="blog-content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title mb-5">
+                                <h3 class="text-uppercase">blog</h3>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <div class="line m-auto" style="width: 40px; height:5px"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="blog-img">
+                                        <a href="blog.html"><img src="images/post-1.jpg" class="card-img-top"
+                                                alt="work-1"></a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="blog-body position-relative">
+                                            <div
+                                                class="blog-label text-uppercase text-light rounded-2 bg-primary d-inline-block p-2 position-absolute start-50 translate-middle">
+                                                <span>Travel</span>
+                                            </div>
+                                            <h4 class="card-title pt-2"><a href="#">See more ideas about Travel</a></h4>
+                                            <p>Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus.
+                                                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                                            </p>
+                                        </div>
 
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Education / Training</h1>
-      <hr />
-      <div class="card">
-        <div class="card-content">
-          <div class="content">
-            <p class="title is-4">University of Cebu - banilad</p>
-            <p class="subtitle is-6">Computer Engineering - <time datetime="2014-5">May 2014</time> - <time
-                datetime="2019-3">March 2019</time></p>
-          </div>
-          <!-- <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris.
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-          </div> -->
-        </div>
-      </div>
-    </div>
-  </section>
+                                    </div>
+                                    <div
+                                        class="card-footer text-body-secondary d-flex justify-content-between align-items-center">
+                                        <div class="blog-author-content d-flex gap-2 align-items-end">
+                                            <div class="blog-avatar">
+                                                <img src="images/testimonial-2.jpg" alt="blog-avatar-small-img"
+                                                    class="rounded-circle">
+                                            </div>
+                                            <h5 class="blog-author">
+                                                <a href="#">Morgan Freeman</a>
+                                            </h5>
+                                        </div>
+                                        <div class="blog-date">
+                                            <span class="bi bi-clock"></span>
+                                            10 min
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="blog-img">
+                                        <a href="blog.html"><img src="images/post-2.jpg" class="card-img-top"
+                                                alt="work-1"></a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="blog-body position-relative">
+                                            <div
+                                                class="blog-label text-uppercase text-light rounded-2 bg-primary d-inline-block p-2 position-absolute start-50 translate-middle">
+                                                <span>web design</span>
+                                            </div>
+                                            <h4 class="card-title pt-2"><a href="#">See more ideas about Travel</a></h4>
+                                            <p>Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus.
+                                                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="card-footer text-body-secondary d-flex justify-content-between align-items-center">
+                                        <div class="blog-author-content d-flex gap-2 align-items-end">
+                                            <div class="blog-avatar">
+                                                <img src="images/testimonial-2.jpg" alt="blog-avatar-small-img"
+                                                    class="rounded-circle">
+                                            </div>
+                                            <h5 class="blog-author">
+                                                <a href="#">Morgan Freeman</a>
+                                            </h5>
+                                        </div>
+                                        <div class="blog-date">
+                                            <span class="bi bi-clock"></span>
+                                            10 min
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card bg-light rounded-4 mb-5">
+                                <div class="card">
+                                    <div class="blog-img">
+                                        <a href="blog.html"><img src="images/post-3.jpg" class="card-img-top"
+                                                alt="work-1"></a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="blog-body position-relative">
+                                            <div
+                                                class="blog-label text-uppercase text-light rounded-2 bg-primary d-inline-block p-2 position-absolute start-50 translate-middle">
+                                                <span>web design</span>
+                                            </div>
+                                            <h4 class="card-title pt-2"><a href="#">See more ideas about Travel</a></h4>
+                                            <p>Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus.
+                                                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                                            </p>
+                                        </div>
 
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Contact</h1>
-      <hr />
-      <nav class="level">
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="https://github.com/lanskie" class="icon is-large">
-              <i class="fab fa-2x fa-github"></i>
-            </a>
-            <p class="heading"><a href="https://github.com/lanskie">github.com/lanskie</a></p>
-          </div>
-        </div>
-        <!-- <div class="level-item has-text-centered">
-          <div>
-            <a href="https://fullstackmark.com" class="icon is-large">
-              <i class="fas fa-2x fa-globe"></i>
-            </a>
-            <p class="heading"><a href="https://fullstackmark.com">fullstackmark.com</a></p>
-          </div>
+                                    </div>
+                                    <div
+                                        class="card-footer text-body-secondary d-flex justify-content-between align-items-center">
+                                        <div class="blog-author-content d-flex gap-2 align-items-end">
+                                            <div class="blog-avatar">
+                                                <img src="images/testimonial-2.jpg" alt="blog-avatar-small-img"
+                                                    class="rounded-circle">
+                                            </div>
+                                            <h5 class="blog-author">
+                                                <a href="#">Morgan Freeman</a>
+                                            </h5>
+                                        </div>
+                                        <div class="blog-date">
+                                            <span class="bi bi-clock"></span>
+                                            10 min
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- End Blog -->
+        <!-- Start contact -->
+        <section id="contact" class="sec-pt-4">
+            <div class="container">
+                <div class="contact-content bg-light shadow p-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="get-in-touch">
+                                <div class="sm-title mb-4">
+                                    <h4>Get in Touch</h4>
+                                    <div class="line"></div>
+                                </div>
+                                <!-- <p class="lead mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+                                    dolorum
+                                    dolorem soluta quidem expedita aperiam aliquid at. Totam magni ipsum suscipit amet?
+                                    Autem nemo esse laboriosam ratione nobis mollitia inventore?</p> -->
+                                <ul class="contact-info mb-4">
+                                    <li><span class="bi bi-geo-alt"></span>Tigbao Talamban Cebu City, Philippines</li>
+                                    <li><span class="bi bi-phone"></span><a href="tel:+(63) 977-326-4841">(63)
+                                            977-326-4841</a></li>
+                                    <li><span class="bi bi-envelope"></span><a
+                                            href="mailto:allanreylayese@gmail.com">allanreylayese@gmail.com</a></li>
+                                </ul>
+                                <ul class="social-links d-flex gap-2">
+                                    <li class="icon d-flex justify-content-center align-items-center rounded-circle">
+                                        <a href="https://www.linkedin.com/in/allanreylayese"><span
+                                                class="bi bi-linkedin"></span></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End contact -->
+    </main>
+    <!-- Start footer -->
+    <footer class="text-center text-light">
+        <!-- <div class="container">
+            <p> © Copyright DevFolio. All Rights Reserved Designed by <a href="#">BootstrapMade</a> practiced by <a
+                    href="https://github.com/AyaAbdelmoghith">Eng. Aya Abdelmoghith</a></p>
         </div> -->
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="mailto:allanreylayese@gmail.com" class="icon is-large">
-              <i class="fas fa-2x fa-envelope"></i>
-            </a>
-            <p class="heading"><a href="mailto:allanreylayese@gmail.com">allanreylayese@gmail.com</a></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <a href="https://www.linkedin.com/in/allanreylayese" class="icon is-large">
-              <i class="fab fa-2x fa-linkedin-in"></i>
-            </a>
-            <p class="heading"><a href="https://www.linkedin.com/in/allanreylayese">linkedin</a></p>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </section>
+    </footer>
+    <!-- End footer -->
+    <!-- ٍStart up arrow -->
+    <a href="#home"
+        class="arrow-up-icon d-flex justify-content-center align-items-center rounded-circle text-light fs-5 position-fixed bg-primary">
+        <span class="bi bi-arrow-up"></span>
+    </a>
+    <!-- End up arrow -->
 
-  <!-- Modals -->
-  <div id="project-1-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Shinpukan</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-
-        <div id="project-1-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/shin-1.jpg">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>
-            Analyzed, Process Big data, fixed, and provided support for existing REST API that computes and analyzes the building consumption like water and electrical appliances.
-          </p>
-          <div class="tags">
-            <span class="tag">Cake PHP</span>
-            <span class="tag">SQL</span>
-            <span class="tag">React</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-2-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Kuroshio Trucking System</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-
-        <div id="project-2-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/kuroshio-1.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Logistics Heavy truck booking system that allows operators to book a heavy truck for operations or to subcontract. User can also monitor and input an origin and destination, compute gas consumption, and distance fee.</p>
-          <div class="tags">
-            <span class="tag">React</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">GraphQL</span>
-            <span class="tag">NodeJS</span>
-          </div>
-        </div>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-3-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Juwwa</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-3-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/juwwa-1.png" style="object-fit: contain;">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Social Media Application where users can chat to the current events created by the managers and post and advertisement in chat rooms.</p>
-          <div class="tags">
-            <span class="tag">Vue</span>
-            <span class="tag">NodeJS</span>
-            <span class="tag">Neo4j</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-4-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-4-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/FS-1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/fs-cover-1.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>A web-based and responsive mobile application system that does map visualization and monitoring.
-            For the mobile it is responsible for onsite tracking where the Notification displayed on the map
-            then a worker will go on site to check to and prevent fiber cable damages. 
-             Also check the accurate location or part of the cable where the notification occur by using the mobile web application
-          </p>
-          <div class="tags">
-            <span class="tag">HTML, CSS, JS</span>
-            <span class="tag">Vanilla JS</span>
-            <span class="tag">Mongo DB</span>
-            <span class="tag">Java</span>
-            <span class="tag">Bootstrap</span>
-            <span class="tag">Leaflet JS</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-5-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">IAM Basic</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-5-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/basic-cover-1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/iam-basic-1.png" style="object-fit: contain;">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Monitoring and dashboard system for fiber and belt conveyor equipment via checkpoints/controllers.
-            Analyzed, fixed issues, and provided support in the maintenance of the existing web applications.
-            Helped in requirements analysis and creating new pages and components
-          </p>
-          <div class="tags">
-            <span class="tag">Angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">Typscript</span>
-            <span class="tag">JAVA</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-6-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-6-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/sms-cover-1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/sms-1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/sms-2.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Create and maintain Mobile and Web frontend application
-            where monitor the stock out rate of the store shelf.
-          Web is responsible for shelf setting for Admin, and check the store shelf rate every 10 min for Staff similar to Mobile functionality.
-        </p>
-          <div class="tags">
-            <span class="tag">Angular</span>
-            <span class="tag">typscript</span>
-            <span class="tag">Flutter</span>
-            <span class="tag">Dart</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <a href="https://github.com/mmacneil/devfolio" target="_blank" class="icon has-text-primary">
-          <i class="fab fa-github"></i> <strong>devfolio</strong></a>
-      </p>
-    </div>
-  </footer>
-
-  <script src="js/bundle.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+        </script> -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
-
-<style>
-.image {
-  object-fit: contain;
-}
-
-.carousel-cell {
-  object-fit: contain;
-}
-</style>
