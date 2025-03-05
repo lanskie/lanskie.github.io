@@ -9,7 +9,7 @@
     background: #0d6efd;
 }
 #header, .header-content{
-    min-height: 60vh;
+    min-height: 40vh;
  }
 #header{  
     margin-top: 50px;

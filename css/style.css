@@ -796,7 +796,8 @@ h1 {
 .service-card {
     padding: 2.5rem 1.3rem;
     -webkit-box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
 }
 
 .service-card .icon,
@@ -850,6 +851,7 @@ h1 {
     border: 0;
     -webkit-box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+    min-height: 450px;
 }
 
 .portfolio-card .card,
